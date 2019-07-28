@@ -42,6 +42,7 @@
       <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -60,6 +61,23 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\BootstrapperBase.cs" />
+    <Compile Include="Commands\CommandViewModel.cs" />
+    <Compile Include="Commands\IMenuItemViewModel.cs" />
+    <Compile Include="Commands\MenuItemSeparatorViewModel.cs" />
+    <Compile Include="Commands\MenuItemViewModel.cs" />
+    <Compile Include="Commands\SimpleCommand.cs" />
+    <Compile Include="Commands\UiCommandViewModel.cs" />
+    <Compile Include="Common\DebugCompositionContainer.cs" />
+    <Compile Include="Common\IDataContextObserver.cs" />
+    <Compile Include="Common\IServiceLocator.cs" />
+    <Compile Include="Common\IThemeManager.cs" />
+    <Compile Include="Common\IViewLocator.cs" />
+    <Compile Include="Common\MefServiceLocator.cs" />
+    <Compile Include="Common\StartupTasksBase.cs" />
+    <Compile Include="Extensions\ApplicationDispatcher.cs" />
+    <Compile Include="Extensions\DispatcherExtension.cs" />
+    <Compile Include="Extensions\IListExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -73,6 +91,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Common\TaskList.cs" />
+    <Compile Include="Common\ThemeManager.cs" />
+    <Compile Include="Common\ViewLocator.cs" />
+    <Compile Include="Tools\ApplicationWrapper.cs" />
+    <Compile Include="Tools\AsyncHelper.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
