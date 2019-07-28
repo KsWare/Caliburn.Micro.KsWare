@@ -7,6 +7,5 @@ namespace KsWare.CaliburnMicro.Extensions
 	{
 		public static DispatcherOperation BeginInvoke(this Dispatcher dispatcher, Action callback, DispatcherPriority priority = DispatcherPriority.Normal)
 			=> dispatcher.BeginInvoke(callback,priority);
-		
 	}
 }

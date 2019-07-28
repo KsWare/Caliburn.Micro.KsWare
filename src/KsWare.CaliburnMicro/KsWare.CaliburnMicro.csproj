@@ -75,6 +75,12 @@
     <Compile Include="Common\IViewLocator.cs" />
     <Compile Include="Common\MefServiceLocator.cs" />
     <Compile Include="Common\StartupTasksBase.cs" />
+    <Compile Include="DragDrop\DragSourceBehavior.cs" />
+    <Compile Include="DragDrop\DropTargetBehavior.cs" />
+    <Compile Include="DragDrop\ICustomDragSource.cs" />
+    <Compile Include="DragDrop\ICustomDropTarget.cs" />
+    <Compile Include="DragDrop\IDragSource.cs" />
+    <Compile Include="DragDrop\IDropTarget.cs" />
     <Compile Include="Extensions\ApplicationDispatcher.cs" />
     <Compile Include="Extensions\DispatcherExtension.cs" />
     <Compile Include="Extensions\IListExtension.cs" />
