@@ -5,15 +5,16 @@
 	having to add it in here.
 	
 	For more info on how to compose a nuspec file see http://docs.nuget.org/create/nuspec-reference 
+  NuGet.org only accepts license expressions that are approved by the Open Source Initiative or the Free Software Foundation https://spdx.org/licenses/
 	-->
 
   <metadata>
-    <id>$id$</id>
+    <id>Caliburn.Micro.KsWare</id>
     <version>$version$</version>
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <license>https://github.com/$author$/$id$/blob/master/LICENSE</license>
+    <license type="expression">LGPL-3.0-only</license>
     <projectUrl>https://github.com/$author$/$id$</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/$author$/$id$/master/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
