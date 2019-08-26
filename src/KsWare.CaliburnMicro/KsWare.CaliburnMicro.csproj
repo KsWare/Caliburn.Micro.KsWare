@@ -8,11 +8,14 @@
     <OutputType>library</OutputType>
     <RootNamespace>KsWare.CaliburnMicro</RootNamespace>
     <AssemblyName>KsWare.CaliburnMicro</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,29 +64,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\BootstrapperBase.cs" />
-    <Compile Include="Commands\CommandViewModel.cs" />
-    <Compile Include="Commands\IMenuItemViewModel.cs" />
-    <Compile Include="Commands\MenuItemSeparatorViewModel.cs" />
-    <Compile Include="Commands\MenuItemViewModel.cs" />
-    <Compile Include="Commands\SimpleCommand.cs" />
-    <Compile Include="Commands\UiCommandViewModel.cs" />
-    <Compile Include="Common\DebugCompositionContainer.cs" />
-    <Compile Include="Common\IDataContextObserver.cs" />
-    <Compile Include="Common\IServiceLocator.cs" />
-    <Compile Include="Common\IThemeManager.cs" />
-    <Compile Include="Common\IViewLocator.cs" />
-    <Compile Include="Common\MefServiceLocator.cs" />
-    <Compile Include="Common\StartupTasksBase.cs" />
-    <Compile Include="DragDrop\DragSourceBehavior.cs" />
-    <Compile Include="DragDrop\DropTargetBehavior.cs" />
-    <Compile Include="DragDrop\ICustomDragSource.cs" />
-    <Compile Include="DragDrop\ICustomDropTarget.cs" />
-    <Compile Include="DragDrop\IDragSource.cs" />
-    <Compile Include="DragDrop\IDropTarget.cs" />
-    <Compile Include="Extensions\ApplicationDispatcher.cs" />
-    <Compile Include="Extensions\DispatcherExtension.cs" />
-    <Compile Include="Extensions\IListExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -97,20 +77,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Common\TaskList.cs" />
-    <Compile Include="Common\ThemeManager.cs" />
-    <Compile Include="Common\ViewLocator.cs" />
-    <Compile Include="Tools\ApplicationWrapper.cs" />
-    <Compile Include="Tools\AsyncHelper.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="KsWare.CaliburnMicro.nuspec" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <Import Project="..\KsWare.CaliburnMicro.Shared\KsWare.CaliburnMicro.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+  </Target>
 </Project>

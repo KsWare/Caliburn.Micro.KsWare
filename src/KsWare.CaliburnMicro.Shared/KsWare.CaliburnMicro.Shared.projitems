@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>86190d9b-948f-4d35-b64e-ec9bb9bf8558</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>KsWare.CaliburnMicro</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\CommandViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\IMenuItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\MenuItemSeparatorViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\MenuItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\SimpleCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\UiCommandViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\BootstrapperBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\DebugCompositionContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\IDataContextObserver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\IServiceLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\IThemeManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\IViewLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\MefServiceLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\StartupTasksBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\TaskList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ThemeManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ViewLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DragDrop\DragSourceBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DragDrop\DropTargetBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DragDrop\ICustomDragSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DragDrop\ICustomDropTarget.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DragDrop\IDragSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DragDrop\IDropTarget.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ApplicationDispatcher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\DispatcherExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\IListExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\ApplicationWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\AsyncHelper.cs" />
+  </ItemGroup>
+</Project>
