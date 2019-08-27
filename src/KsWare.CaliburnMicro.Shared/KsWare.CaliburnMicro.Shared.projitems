@@ -19,6 +19,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\DebugCompositionContainer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\IDataContextObserver.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\IServiceLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\IShell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\IThemeManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\IViewLocator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\MefServiceLocator.cs" />
@@ -32,10 +33,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)DragDrop\ICustomDropTarget.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DragDrop\IDragSource.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DragDrop\IDropTarget.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ApplicationDispatcher.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\DispatcherExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\IListExtension.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tools\ApplicationWrapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\AsyncHelper.cs" />
   </ItemGroup>
 </Project>

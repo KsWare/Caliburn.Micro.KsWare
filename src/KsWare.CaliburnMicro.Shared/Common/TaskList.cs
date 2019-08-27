@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using KsWare.CaliburnMicro.Extensions;
+using KsWare.Presentation.StaticWrapper;
 
 namespace KsWare.CaliburnMicro.Common
 {
 	public class TaskList : List<Task>
 	{
-		private readonly ApplicationDispatcherExtender UiThread = ApplicationDispatcher.Instance.Do;
+		private ApplicationDispatcherExtender UiThread => AssemblyBootstrapper.ApplicationDispatcher.Do;
 
 		public void RunOnUiThread(Action action) => 
 			Add(UiThread.RunAsync(action));

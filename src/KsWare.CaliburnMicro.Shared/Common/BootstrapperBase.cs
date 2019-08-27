@@ -2,11 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
+using System.ComponentModel.Composition.Primitives;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Windows;
 using Caliburn.Micro;
+using KsWare.CaliburnMicro.Shared;
 
 namespace KsWare.CaliburnMicro.Common {
 	public class BootstrapperBase : Caliburn.Micro.BootstrapperBase
@@ -89,16 +92,16 @@ namespace KsWare.CaliburnMicro.Common {
 			throw new Exception($"Could not locate any instances of contract {contract}.\nTrace:\n{Container.GetFailedExportsTrace()}");
 		}
 
-//		protected override void OnStartup(object sender, StartupEventArgs e)
-//		{
-//			var startupTasks =
-//				GetAllInstances(typeof(StartupTask))
-//					.Cast<ExportedDelegate>()
-//					.Select(exportedDelegate => (StartupTask)exportedDelegate.CreateDelegate(typeof(StartupTask)));
-//
-//			startupTasks.Apply(s => s());
-//
-//			DisplayRootViewFor<IShell>();
-//		}
+		protected override void OnStartup(object sender, StartupEventArgs e)
+		{
+			var startupTasks =
+				GetAllInstances(typeof(StartupTask))
+					.Cast<ExportedDelegate>()
+					.Select(exportedDelegate => (StartupTask)exportedDelegate.CreateDelegate(typeof(StartupTask)));
+
+			startupTasks.Apply(s => s());
+
+			DisplayRootViewFor<IShell>();
+		}
 	}
 }
