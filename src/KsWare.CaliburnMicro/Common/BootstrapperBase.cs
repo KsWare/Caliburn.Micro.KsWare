@@ -2,11 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
+using System.ComponentModel.Composition.Primitives;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Windows;
 using Caliburn.Micro;
+using KsWare.Presentation.StaticWrapper;
 
 namespace KsWare.CaliburnMicro.Common {
 	public class BootstrapperBase : Caliburn.Micro.BootstrapperBase
@@ -47,6 +50,8 @@ namespace KsWare.CaliburnMicro.Common {
 			var batch = new CompositionBatch();
 			batch.AddExportedValue<IWindowManager>(new WindowManager());
 			batch.AddExportedValue<IEventAggregator>(new EventAggregator());
+			batch.AddExportedValue<IApplication>(AssemblyBootstrapper.ApplicationWrapper);
+			batch.AddExportedValue<IApplicationDispatcher>(AssemblyBootstrapper.ApplicationDispatcher);
 			//batch.AddExportedValue(_container); // DISABLED Warning: A CompositionContainer should never import itself, or a part that has a reference to it. Such a reference could allow an untrusted part to gain access all the parts in the container.
 			batch.AddExportedValue<IServiceLocator>(new MefServiceLocator(Container));
 			batch.AddExportedValue(Container.Catalog);
@@ -89,16 +94,16 @@ namespace KsWare.CaliburnMicro.Common {
 			throw new Exception($"Could not locate any instances of contract {contract}.\nTrace:\n{Container.GetFailedExportsTrace()}");
 		}
 
-//		protected override void OnStartup(object sender, StartupEventArgs e)
-//		{
-//			var startupTasks =
-//				GetAllInstances(typeof(StartupTask))
-//					.Cast<ExportedDelegate>()
-//					.Select(exportedDelegate => (StartupTask)exportedDelegate.CreateDelegate(typeof(StartupTask)));
-//
-//			startupTasks.Apply(s => s());
-//
-//			DisplayRootViewFor<IShell>();
-//		}
+		protected override void OnStartup(object sender, StartupEventArgs e)
+		{
+			var startupTasks =
+				GetAllInstances(typeof(StartupTask))
+					.Cast<ExportedDelegate>()
+					.Select(exportedDelegate => (StartupTask)exportedDelegate.CreateDelegate(typeof(StartupTask)));
+
+			startupTasks.Apply(s => s());
+
+			DisplayRootViewFor<IShell>();
+		}
 	}
 }
