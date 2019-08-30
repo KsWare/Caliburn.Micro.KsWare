@@ -9,7 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows;
 using Caliburn.Micro;
-using KsWare.CaliburnMicro.Shared;
+using KsWare.Presentation.StaticWrapper;
 
 namespace KsWare.CaliburnMicro.Common {
 	public class BootstrapperBase : Caliburn.Micro.BootstrapperBase
@@ -50,6 +50,8 @@ namespace KsWare.CaliburnMicro.Common {
 			var batch = new CompositionBatch();
 			batch.AddExportedValue<IWindowManager>(new WindowManager());
 			batch.AddExportedValue<IEventAggregator>(new EventAggregator());
+			batch.AddExportedValue<IApplication>(AssemblyBootstrapper.ApplicationWrapper);
+			batch.AddExportedValue<IApplicationDispatcher>(AssemblyBootstrapper.ApplicationDispatcher);
 			//batch.AddExportedValue(_container); // DISABLED Warning: A CompositionContainer should never import itself, or a part that has a reference to it. Such a reference could allow an untrusted part to gain access all the parts in the container.
 			batch.AddExportedValue<IServiceLocator>(new MefServiceLocator(Container));
 			batch.AddExportedValue(Container.Catalog);

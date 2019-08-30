@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace KsWare.CaliburnMicro.Tools
+namespace KsWare.CaliburnMicro.Helper
 {
 	public static class AsyncHelper
 	{
