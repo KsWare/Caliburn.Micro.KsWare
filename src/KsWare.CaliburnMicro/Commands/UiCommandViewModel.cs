@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Caliburn.Micro;
 using Action = System.Action;
 
@@ -16,6 +17,11 @@ namespace KsWare.CaliburnMicro.Commands
 		}
 
 		public UiCommandViewModel(string displayName, Func<Task> executeCallback, Func<bool> canExecuteCallback) : base(executeCallback, canExecuteCallback)
+		{
+			_displayName = displayName;
+		}
+
+		protected UiCommandViewModel(string displayName, ICommand command) : base(command)
 		{
 			_displayName = displayName;
 		}

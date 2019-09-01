@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Caliburn.Micro;
@@ -8,6 +9,8 @@ namespace KsWare.CaliburnMicro.Commands
 {
 	public class CommandViewModel : PropertyChangedBase, ICommand
 	{
+		private readonly ICommand _command;
+
 		public CommandViewModel(Action action, Func<bool> canExecute = null)
 		{
 			ExecuteCallback=action;
@@ -18,6 +21,13 @@ namespace KsWare.CaliburnMicro.Commands
 		{
 			ExecuteAsyncCallback = asyncAction;
 			CanExecuteCallback = canExecute;
+		}
+
+		public CommandViewModel(ICommand command)
+		{
+			_command = command;
+			CanExecuteCallback = () => _command.CanExecute(null);
+			ExecuteCallback = () => _command.Execute(null);
 		}
 
 		public Func<bool> CanExecuteCallback { get; set; }

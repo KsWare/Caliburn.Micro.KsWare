@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Caliburn.Micro;
 using Action = System.Action;
 
@@ -10,6 +11,10 @@ namespace KsWare.CaliburnMicro.Commands
 	{
 		private string _toolTip;
 		private BindableCollection<IMenuItemViewModel> _subItems;
+
+		private MenuItemViewModel() : base(null, null, null)
+		{
+		}
 
 		public MenuItemViewModel(string displayName) : this(displayName, new IMenuItemViewModel[0])
 		{
@@ -33,9 +38,11 @@ namespace KsWare.CaliburnMicro.Commands
 		{
 		}
 
-		private MenuItemViewModel() : base(null, null,null)
+		public MenuItemViewModel(string displayName, ICommand command) : base(displayName, command)
 		{
 		}
+
+
 
 		public bool IsSeparator { get; protected set; }
 		public string ToolTip { get => _toolTip; set => Set(ref _toolTip, value);}

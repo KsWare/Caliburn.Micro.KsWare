@@ -80,7 +80,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\UserCommand.cs" />
     <Compile Include="Commands\CommandViewModel.cs" />
+    <Compile Include="Commands\ICommandParameter.cs" />
     <Compile Include="Commands\IMenuItemViewModel.cs" />
     <Compile Include="Commands\MenuItemSeparatorViewModel.cs" />
     <Compile Include="Commands\MenuItemViewModel.cs" />
@@ -90,10 +92,13 @@
     <Compile Include="Common\DebugCompositionContainer.cs" />
     <Compile Include="Common\IDataContextObserver.cs" />
     <Compile Include="Common\IServiceLocator.cs" />
+    <Compile Include="Common\IServiceLocatorParameterExtension.cs" />
     <Compile Include="Common\IShell.cs" />
     <Compile Include="Common\IThemeManager.cs" />
     <Compile Include="Common\IViewLocator.cs" />
     <Compile Include="Common\MefServiceLocator.cs" />
+    <Compile Include="Common\IServiceLocatorExtension.cs" />
+    <Compile Include="Common\ParameterImport.cs" />
     <Compile Include="Common\StartupTasksBase.cs" />
     <Compile Include="Common\TaskList.cs" />
     <Compile Include="Common\ThemeManager.cs" />
@@ -106,6 +111,7 @@
     <Compile Include="DragDrop\IDropTarget.cs" />
     <Compile Include="Extensions\DispatcherExtension.cs" />
     <Compile Include="Extensions\IListExtension.cs" />
+    <Compile Include="Extensions\TypeExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
